@@ -5,6 +5,8 @@ from dissect.target.loader import Loader
 
 
 class OvfLoader(Loader):
+    """Loader for Open Virtualization Format (OVF) files."""
+
     def __init__(self, path, **kwargs):
         path = path.resolve()
 

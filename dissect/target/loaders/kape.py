@@ -16,6 +16,8 @@ USNJRNL_PATHS = ["$Extend/$J", "$Extend/$UsnJrnl$J"]
 
 
 class KapeLoader(DirLoader):
+    """Loader for KAPE forensic image format files."""
+
     @staticmethod
     def detect(path: Path) -> bool:
         os_type, dirs = find_dirs(path)

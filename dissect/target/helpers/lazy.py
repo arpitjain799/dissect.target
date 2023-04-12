@@ -58,6 +58,14 @@ class LazyAttr:
 
         return getattr(self._realattr, attr)
 
+    @property
+    def __doc__(self):
+        if not self._realattr:
+            self.module._import()  # noqa
+            self._realattr = getattr(self.module._module, self.attr)  # noqa
+
+        return self._realattr.__doc__
+
     def __repr__(self):
         return f"<lazyattr {self.module._module_name}.{self.attr} loaded={self._realattr is not None}>"
 

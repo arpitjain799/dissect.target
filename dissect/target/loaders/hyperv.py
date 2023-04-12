@@ -76,7 +76,7 @@ def xml_as_dict(element: Element, root: Optional[dict] = None) -> dict:
 
 
 class HyperVLoader(Loader):
-    """Hyper-V loader.
+    """Loader for Microsoft Hyper-V hypervisor files.
 
     Maps all virtual disks to the target. All paths are absolute in Hyper-V configuration files, so we first attempt
     to locate a file with the same name in the same path as the configuration file. This is the most common method if

@@ -59,6 +59,8 @@ DOMAIN_TRANSLATION = {
 
 
 class ITunesLoader(Loader):
+    """Loader for iTunes backup files."""
+
     def __init__(self, path: Path, **kwargs):
         super().__init__(path)
 

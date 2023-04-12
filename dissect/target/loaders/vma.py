@@ -5,6 +5,8 @@ from dissect.target.loader import Loader
 
 
 class VmaLoader(Loader):
+    """Loader for Proxmox Virtual Machine Archive (VMA) files."""
+
     def __init__(self, path, **kwargs):
         path = path.resolve()
         super().__init__(path)

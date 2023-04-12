@@ -5,6 +5,8 @@ from dissect.target.loader import Loader
 
 
 class XvaLoader(Loader):
+    """Loader for Citrix Hypervisor XVA format files."""
+
     def __init__(self, path, **kwargs):
         path = path.resolve()
         super().__init__(path)

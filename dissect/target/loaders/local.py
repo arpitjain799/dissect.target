@@ -20,6 +20,8 @@ WINDOWS_DRIVE_FIXED = 3
 
 
 class LocalLoader(Loader):
+    """Loader for the local filesystem."""
+
     @staticmethod
     def detect(path):
         _, path_part, _ = parse_path_uri(path)

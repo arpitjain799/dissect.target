@@ -5,6 +5,8 @@ from dissect.target.loader import Loader
 
 
 class VmxLoader(Loader):
+    """Loader for VMware virtual machine configuration (VMX) files."""
+
     def __init__(self, path, **kwargs):
         path = path.resolve()
 

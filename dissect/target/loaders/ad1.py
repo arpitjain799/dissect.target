@@ -5,6 +5,8 @@ from dissect.target.loader import Loader
 
 
 class AD1Loader(Loader):
+    """Loader for AccessData's forensic image format (AD1)."""
+
     def __init__(self, path, **kwargs):
         path = path.resolve()
 
