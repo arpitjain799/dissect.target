@@ -1,21 +1,21 @@
 from __future__ import annotations
 
-from datetime import datetime
 import stat
-from typing import BinaryIO, TYPE_CHECKING, Iterator
+from datetime import datetime
+from typing import TYPE_CHECKING, BinaryIO, Iterator
 
 from cbc_sdk.live_response_api import LiveResponseError
-
 from dissect.target.exceptions import FileNotFoundError, NotADirectoryError
 from dissect.target.filesystem import Filesystem, FilesystemEntry
 from dissect.target.helpers import fsutil
 
 if TYPE_CHECKING:
+    from pathlib import Path
+
     from cbc_sdk.live_response_api import LiveResponseSession
     from cbc_sdk.platform import Device
     from cbc_sdk.rest_api import CBCloudAPI
     from dissect.target.helpers.fsutil import stat_result
-    from pathlib import Path
 
 
 EPOCH = datetime(1970, 1, 1)
@@ -30,7 +30,7 @@ class CbFilesystem(Filesystem):
         self.sensor = sensor
         self.session = session
         self.prefix = prefix
-        super().__init__(volume=prefix)
+        super().__init__(prefix)
 
     @staticmethod
     def detect(fh: BinaryIO):

@@ -5,7 +5,6 @@ from typing import TYPE_CHECKING, Iterable
 from cbc_sdk.errors import CredentialError
 from cbc_sdk.platform import Device
 from cbc_sdk.rest_api import CBCloudAPI
-
 from dissect.target.exceptions import (
     CBCCredentialError,
     CBCDeviceError,
@@ -20,9 +19,10 @@ from dissect.target.loader import Loader
 from dissect.target.plugins.os.windows.registry import RegistryPlugin
 
 if TYPE_CHECKING:
+    from pathlib import Path
+
     from cbc_sdk.live_response_api import LiveResponseSession
     from dissect.target.target import Target
-    from pathlib import Path
 
 
 class CbLoader(Loader):
