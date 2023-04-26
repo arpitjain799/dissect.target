@@ -10,6 +10,7 @@ from typing import TYPE_CHECKING, BinaryIO, Iterator
 from cbc_sdk.live_response_api import LiveResponseError, LiveResponseSession
 from cbc_sdk.platform import Device
 from cbc_sdk.rest_api import CBCloudAPI
+
 from dissect.target.exceptions import FileNotFoundError, NotADirectoryError
 from dissect.target.filesystem import Filesystem, FilesystemEntry
 from dissect.target.helpers import fsutil
